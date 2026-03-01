@@ -94,7 +94,7 @@ const personagem5 = {
 }
 
 const personagem6 = {
-    nome: "Tony Stark",
+    nome: "Tony Stark", //are you tony stank?
     codinome: "Homem de Ferro",
     armaPrincipal: "Raios da armadura",
     armaSecundaria: "Mísseis",
@@ -130,3 +130,23 @@ const personagem7 = {
         "Nível de resistência: " + this.resistencia + "\n"
     }
 }
+
+let listaPersonagens = [personagem, personagem2, personagem3, personagem4, personagem5, personagem6, personagem7]
+
+listaPersonagens.forEach(function(persona1){
+    let atributosPersona1 = persona1.velocidade + persona1.forca + persona1.resistencia
+    listaPersonagens.forEach(function(persona2){
+        let atributosPersona2 = persona2.velocidade + persona2.forca + persona2.resistencia
+        if(listaPersonagens.indexOf(persona1) < listaPersonagens.indexOf(persona2)){
+            if (atributosPersona1 > atributosPersona2){
+                console.log(`${persona1.descicrao()} venceu ${persona2.descicrao()}`)
+            }
+            else if (atributosPersona1 < atributosPersona2){
+                console.log(`${persona2.descicrao()} venceu ${persona1.descicrao()}`)
+            }
+            else{
+                console.log(`${persona1.descicrao()} e ${persona2.descicrao()} empataram`)
+            }
+        }
+    })
+})
